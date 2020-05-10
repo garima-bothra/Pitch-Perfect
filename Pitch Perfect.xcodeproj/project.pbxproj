@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		86A222802468369400FBD9D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A2227F2468369400FBD9D7 /* AppDelegate.swift */; };
 		86A222822468369400FBD9D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A222812468369400FBD9D7 /* SceneDelegate.swift */; };
-		86A222842468369400FBD9D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A222832468369400FBD9D7 /* ViewController.swift */; };
+		86A222842468369400FBD9D7 /* RecordAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A222832468369400FBD9D7 /* RecordAudioViewController.swift */; };
 		86A222872468369400FBD9D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86A222852468369400FBD9D7 /* Main.storyboard */; };
 		86A222892468369700FBD9D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86A222882468369700FBD9D7 /* Assets.xcassets */; };
 		86A2228C2468369700FBD9D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86A2228A2468369700FBD9D7 /* LaunchScreen.storyboard */; };
+		86A222942468AF1A00FBD9D7 /* SoundEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A222932468AF1A00FBD9D7 /* SoundEditorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		86A2227C2468369400FBD9D7 /* Pitch Perfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pitch Perfect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A2227F2468369400FBD9D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86A222812468369400FBD9D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		86A222832468369400FBD9D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		86A222832468369400FBD9D7 /* RecordAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordAudioViewController.swift; sourceTree = "<group>"; };
 		86A222862468369400FBD9D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		86A222882468369700FBD9D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86A2228B2468369700FBD9D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86A2228D2468369700FBD9D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86A222932468AF1A00FBD9D7 /* SoundEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEditorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				86A2227F2468369400FBD9D7 /* AppDelegate.swift */,
 				86A222812468369400FBD9D7 /* SceneDelegate.swift */,
-				86A222832468369400FBD9D7 /* ViewController.swift */,
+				86A222832468369400FBD9D7 /* RecordAudioViewController.swift */,
+				86A222932468AF1A00FBD9D7 /* SoundEditorViewController.swift */,
 				86A222852468369400FBD9D7 /* Main.storyboard */,
 				86A222882468369700FBD9D7 /* Assets.xcassets */,
 				86A2228A2468369700FBD9D7 /* LaunchScreen.storyboard */,
@@ -138,7 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86A222842468369400FBD9D7 /* ViewController.swift in Sources */,
+				86A222842468369400FBD9D7 /* RecordAudioViewController.swift in Sources */,
+				86A222942468AF1A00FBD9D7 /* SoundEditorViewController.swift in Sources */,
 				86A222802468369400FBD9D7 /* AppDelegate.swift in Sources */,
 				86A222822468369400FBD9D7 /* SceneDelegate.swift in Sources */,
 			);

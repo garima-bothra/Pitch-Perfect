@@ -10,6 +10,9 @@ import UIKit
 
 class SoundEditorViewController: UIViewController {
 
+    //MARK: Variables
+    var recordedAudioURL: URL!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
