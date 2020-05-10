@@ -9,7 +9,7 @@
 import UIKit
 import AVKit
 
-class ViewController: UIViewController {
+class RecordAudioViewController: UIViewController, AVAudioRecorderDelegate {
     //MARK: IBOutlets
     @IBOutlet weak var recordMessageLabel: UILabel!
     @IBOutlet weak var audioRecordButton: UIButton!
@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     var audioRecorder: AVAudioRecorder!
     override func viewDidLoad() {
         super.viewDidLoad()
+        audioStopButton.isEnabled = false
         // Do any additional setup after loading the view.
     }
     @IBAction func recordButtonPressed(_ sender: Any) {
@@ -35,13 +36,27 @@ class ViewController: UIViewController {
         try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
 
         try! audioRecorder = AVAudioRecorder(url: filePath!, settings: [:])
+        audioRecorder.delegate = self
         audioRecorder.isMeteringEnabled = true
         audioRecorder.prepareToRecord()
         audioRecorder.record()
     }
 
     @IBAction func stopButtonPressed(_ sender: Any) {
+        recordMessageLabel.text = "Tap to record"
+        audioStopButton.isEnabled = false
+        audioRecordButton.isEnabled = true
+        audioRecorder.stop()
+        let audioSession = AVAudioSession.sharedInstance()
+        try! audioSession.setActive(false)
     }
 
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if flag {
+            performSegue(withIdentifier: "recordingComplete", sender: audioRecorder.url)
+        } else {
+            print("Recording failed!")
+        }
+    }
 }
 
