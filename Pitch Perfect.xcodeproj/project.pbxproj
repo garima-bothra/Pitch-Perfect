@@ -60,14 +60,30 @@
 			children = (
 				86A2227F2468369400FBD9D7 /* AppDelegate.swift */,
 				86A222812468369400FBD9D7 /* SceneDelegate.swift */,
-				86A222832468369400FBD9D7 /* RecordAudioViewController.swift */,
-				86A222932468AF1A00FBD9D7 /* SoundEditorViewController.swift */,
-				86A222852468369400FBD9D7 /* Main.storyboard */,
+				86A222952468B31400FBD9D7 /* Controllers */,
+				86A222962468B32100FBD9D7 /* Views */,
 				86A222882468369700FBD9D7 /* Assets.xcassets */,
-				86A2228A2468369700FBD9D7 /* LaunchScreen.storyboard */,
 				86A2228D2468369700FBD9D7 /* Info.plist */,
 			);
 			path = "Pitch Perfect";
+			sourceTree = "<group>";
+		};
+		86A222952468B31400FBD9D7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				86A222832468369400FBD9D7 /* RecordAudioViewController.swift */,
+				86A222932468AF1A00FBD9D7 /* SoundEditorViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		86A222962468B32100FBD9D7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				86A2228A2468369700FBD9D7 /* LaunchScreen.storyboard */,
+				86A222852468369400FBD9D7 /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
