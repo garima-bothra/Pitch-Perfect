@@ -32,7 +32,6 @@ class RecordAudioViewController: UIViewController, AVAudioRecorderDelegate {
             recordMessageLabel.text = "Tap to record"
             audioStopButton.isEnabled = false
             audioRecordButton.isEnabled = true
-            audioRecorder.stop()
         }
     }
 
@@ -57,6 +56,7 @@ class RecordAudioViewController: UIViewController, AVAudioRecorderDelegate {
     //MARK: Function to navigate to next screen when stop button is pressed
     @IBAction func stopButtonPressed(_ sender: Any) {
         configureUI(startRecord: false)
+         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
     }
