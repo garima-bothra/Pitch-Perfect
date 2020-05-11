@@ -25,7 +25,6 @@ class SoundEditorViewController: UIViewController {
     var audioEngine:AVAudioEngine!
     var audioPlayerNode: AVAudioPlayerNode!
     var stopTimer: Timer!
-
     enum ButtonType: Int {
         case slow = 0, fast, chipmunk, vader, echo, reverb
     }
@@ -39,7 +38,7 @@ class SoundEditorViewController: UIViewController {
         setupAudio()
         // Do any additional setup after loading the view.
     }
-
+    
     @IBAction func playSoundButtonPressed(sender: UIButton) {
         switch(ButtonType(rawValue: sender.tag)!) {
         case .slow:

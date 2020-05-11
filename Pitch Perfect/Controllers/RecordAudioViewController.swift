@@ -23,6 +23,7 @@ class RecordAudioViewController: UIViewController, AVAudioRecorderDelegate {
         // Do any additional setup after loading the view.
     }
 
+    //MARK: Function to update labels and button upon clicking
     func configureUI(startRecord: Bool) {
         if startRecord {
             recordMessageLabel.text = "Recording in progress"
@@ -36,6 +37,7 @@ class RecordAudioViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
 
+    //MARK: Function to start recording audio
     @IBAction func recordButtonPressed(_ sender: Any) {
         configureUI(startRecord: true)
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
@@ -53,6 +55,7 @@ class RecordAudioViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.record()
     }
 
+    //MARK: Function to navigate to next screen when stop button is pressed
     @IBAction func stopButtonPressed(_ sender: Any) {
         configureUI(startRecord: false)
         let audioSession = AVAudioSession.sharedInstance()
@@ -63,10 +66,13 @@ class RecordAudioViewController: UIViewController, AVAudioRecorderDelegate {
         if flag {
             performSegue(withIdentifier: "recordingComplete", sender: audioRecorder.url)
         } else {
-            print("Recording failed!")
+            let alert = UIAlertController(title: "Try Again", message: "Failed to record audio. Try again!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
 
+    //MARK: Prepare Segue function to pass audio file to next ViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "recordingComplete" {
             let editorViewController = segue.destination as! SoundEditorViewController
