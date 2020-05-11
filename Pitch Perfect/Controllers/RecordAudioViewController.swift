@@ -58,7 +58,12 @@ class RecordAudioViewController: UIViewController, AVAudioRecorderDelegate {
         configureUI(startRecord: false)
          audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
-        try! audioSession.setActive(false)
+        do {
+            try audioSession.setActive(false)
+        } catch {
+            let alert = UIAlertController(title: "Try Again", message: "Failed to stop recording audio. Try again!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        }
     }
 
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
