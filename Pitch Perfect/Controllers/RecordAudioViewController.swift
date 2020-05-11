@@ -20,7 +20,6 @@ class RecordAudioViewController: UIViewController, AVAudioRecorderDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI(startRecord: false)
-        // Do any additional setup after loading the view.
     }
 
     //MARK: Function to update labels and button upon clicking

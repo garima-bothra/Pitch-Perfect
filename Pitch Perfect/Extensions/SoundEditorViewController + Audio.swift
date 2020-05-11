@@ -1,18 +1,17 @@
 //
-//  SoundEditorViewController + Audio.swift
-//  Pitch Perfect
+//  PlaySoundsViewController+Audio.swift
+//  PitchPerfect
 //
-//  Created by Garima Bothra on 11/05/20.
-//  Copyright © 2020 Garima Bothra. All rights reserved.
+//  Copyright Â© 2016 Udacity. All rights reserved.
 //
 
 import Foundation
 import AVKit
 
+//MARK: SoundEditorViewController: AVAudioPlayerDelegate
 extension SoundEditorViewController: AVAudioPlayerDelegate {
 
-    // MARK: Alerts
-
+    // MARK: Alert messages
     struct Alerts {
         static let DismissAlert = "Dismiss"
         static let RecordingDisabledTitle = "Recording Disabled"
@@ -101,15 +100,13 @@ extension SoundEditorViewController: AVAudioPlayerDelegate {
             self.stopTimer = Timer(timeInterval: delayInSeconds, target: self, selector: #selector(SoundEditorViewController.stopAudio), userInfo: nil, repeats: false)
             RunLoop.main.add(self.stopTimer!, forMode: RunLoop.Mode.default)
         }
-
         do {
             try audioEngine.start()
         } catch {
             showAlert(Alerts.AudioEngineError, message: String(describing: error))
             return
         }
-
-        // play the recording!
+        // Play the recording
         audioPlayerNode.play()
     }
 
@@ -132,7 +129,6 @@ extension SoundEditorViewController: AVAudioPlayerDelegate {
     }
 
     // MARK: Connect List of Audio Nodes
-
     func connectAudioNodes(_ nodes: AVAudioNode...) {
         for x in 0..<nodes.count-1 {
             audioEngine.connect(nodes[x], to: nodes[x+1], format: audioFile.processingFormat)

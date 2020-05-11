@@ -36,9 +36,9 @@ class SoundEditorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAudio()
-        // Do any additional setup after loading the view.
     }
-    
+
+    //MARK: Function to play audio in five different notes by using tags for buttons
     @IBAction func playSoundButtonPressed(sender: UIButton) {
         switch(ButtonType(rawValue: sender.tag)!) {
         case .slow:
@@ -57,18 +57,8 @@ class SoundEditorViewController: UIViewController {
         configureUI(.playing)
     }
 
+    //MARK: Terminate playing audio when stop button is pressed
     @IBAction func stopSoundButtonPressed(sender: UIButton) {
         stopAudio()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected objec\t to the new view controller.
-    }
-    */
-
 }
